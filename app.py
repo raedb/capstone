@@ -51,11 +51,11 @@ def create_app(test_config=None):
 
     @app.route('/login')
     def login():
-        return redirect("https://fsnd-rmb.us.auth0.com/authorize?audience=image&response_type=token&client_id=tJwIaCeImPAmE7CeZhQ760FZq1ppMuGk&redirect_uri=http://localhost:8080/")
+        return redirect("https://fsnd-rmb.us.auth0.com/authorize?audience=image&response_type=token&client_id=tJwIaCeImPAmE7CeZhQ760FZq1ppMuGk&redirect_uri=https://raed-casting.herokuapp.com/")
 
     @app.route('/logoff')
     def logoff():
-        return redirect("https://fsnd-rmb.us.auth0.com/v2/logout?client_id=tJwIaCeImPAmE7CeZhQ760FZq1ppMuGk&returnTo=http://localhost:8080/")
+        return redirect("https://fsnd-rmb.us.auth0.com/v2/logout?client_id=tJwIaCeImPAmE7CeZhQ760FZq1ppMuGk&returnTo=https://raed-casting.herokuapp.com/")
 
     # get all the movies
     @app.route('/movies', methods=['GET'])

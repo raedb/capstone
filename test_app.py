@@ -124,7 +124,7 @@ class CastingTestCase(unittest.TestCase):
             '/movies',
             json={
                 'title': 'created movie',
-                'release_date': '17-25-2002'},
+                'release_date': '1-2-2002'},
             headers={"Authorization": (PRODUCER_JWT)})
         data = json.loads(res.data)
 
