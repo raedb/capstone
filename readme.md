@@ -68,28 +68,28 @@ Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` d
 
 ## Authentication
 This application has 3 roles, each role has its assigned permissions.
-End points have been provided to \login and \logoff.
+End points have been provided to /login and /logoff.
 
 ### Assistant
 it has 2 permissions: get:movies, get:actors
-'''
+```
 username: a@casting.sa
 password: A@casting.sa
-'''
+```
 
 ### Director
 In addtion to Assistant role's permissions: post:actors, delete:actors, patch:actors, patch:movies
-'''
+```
 username: d@casting.sa
 password: D@casting.sa
-'''
+```
 
 ### Producer
 In addtion to Assistant and Director roles' permissions: post:movies, delete:movies
-'''
+```
 username: p@casting.sa
 password: P@casting.sa
-'''
+```
 
 ## API Reference
 
