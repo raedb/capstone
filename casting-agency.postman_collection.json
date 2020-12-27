@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "4bf5bb13-eb53-40e5-a657-67078dd5cad4",
+		"name": "casting-agency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "get root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assistant",
+			"item": [
+				{
+					"name": "get movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImF5V2x5aFVPLU1aRTJpMEd5Z1ZySyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtcm1iLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZmU2MDlkYWVhM2ZjNzAwNzg3NzFjNjciLCJhdWQiOiJpbWFnZSIsImlhdCI6MTYwOTA3NTYzNywiZXhwIjoxNjA5MTYyMDM3LCJhenAiOiJ0SndJYUNlSW1QQW1FN0NlWmhRNzYwRlpxMXBwTXVHayIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.5cJJ42-xtfQrhKkH51ynWqDBIM7cjiigQS20tFAwCwVjAi-NfzTcVYqSypNJpoejH31MHTR8IuCYULBTL_29LCfhOKA_vI12sX2iKOY1l6YjNVwD14TUA3K4FK7kCubrFqN_BK5V6q1DLT6I-zb2MKZK-9ODQOwwI6R7KtuXoEnTLjCGzuvJVQYqbHNeXEBaJ9XMG0eCpx6wcXLjPhrAkcQ8DIzMt3ipQTu7JphzSrAidXbmYI8D9pkpo5DIa89BcODH5YyfRqqKzBdU50i_zRqe4ougFdigWnLWAc3u81romRuUZiwmESj73LB9u2vv8oe-wyEF03O5JuTfArv6vw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "director",
+			"item": [
+				{
+					"name": "post actor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sameer Ghanem\",\r\n    \"age\": 65,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete actor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actors/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch movie",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"changed patch\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch actor",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"patched name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImF5V2x5aFVPLU1aRTJpMEd5Z1ZySyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtcm1iLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZmU2MjZhYzc4MjM4YjAwNzE5NmI1NjUiLCJhdWQiOiJpbWFnZSIsImlhdCI6MTYwOTA5MTA0MCwiZXhwIjoxNjA5MTc3NDQwLCJhenAiOiJ0SndJYUNlSW1QQW1FN0NlWmhRNzYwRlpxMXBwTXVHayIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.yI6mEB_H264mfhFqm0qrZgIiwOeJEBc2TROqgQRRKC6bHJt3N5JI2CjB_tX6Yx2-fM4S_D6Ew34GG8c7DsJI7LgqySDswt06zKi2GbzKHTPDbnP6ftzj7X9Jq7ZvtAxN1IRLVbCwvdXkYVNsc3j3m8Z6g8tiPVerZeEOAIBd2zb2tsSvnVRaYVj-n31Av1RDg7Yo9Mu51eMTa33ontbBd0VTqKT6edAhsd76n7qEcliSl1wTSAZGYTHelR5fLJJwUHuF4N9qOmcNIMEs6FvR0LRdRFHuX8dIyXX3UjTAvX5rbXok4zpxkoKNn9VtQHIrawI1hrnnIo0yQYvMqmmC6A",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "producer",
+			"item": [
+				{
+					"name": "post movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"gone with the wind\",\r\n    \"release_date\": \"1945-4-6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImF5V2x5aFVPLU1aRTJpMEd5Z1ZySyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtcm1iLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZmU2MzEyYjc4MjM4YjAwNzE5NmI1OTQiLCJhdWQiOiJpbWFnZSIsImlhdCI6MTYwOTA5MTcyMSwiZXhwIjoxNjA5MTc4MTIxLCJhenAiOiJ0SndJYUNlSW1QQW1FN0NlWmhRNzYwRlpxMXBwTXVHayIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.LjnlYUA7mdV8u6RNjNE5R5qMTEYf4I7fYf9Wo3AHDY6fmnPUG4pxL6gded31G4rGxQZ8xHrgfPTi_6f_anPMhYOAWd-tahw0Gpknjz7O2ZOP7gMxpuQN3l-w3N_BWzYeF3ONvRGv47DNqpj90gAil9sDIoNyRf7M555AyQ6oKX0HdT_UhVHvHMIsb_ZH3oB1friJw-gjKOTbvnBvg1XrPxu4yM_k5JWdmGI6vcShdUvtbggJhIhfVlRchA6B6yMoOx6_Vdj5sqP5_ZnWFDZ9qM9eQxIgV1WIuCXO6DQ6XnH_z_y94RARS3qdOvF581TfqEJ8YyXr7tOu6Pfwv1wnBA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
