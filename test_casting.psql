@@ -1,0 +1,25 @@
+CREATE TABLE public.actors (
+  id serial NOT NULL,
+  name text NOT NULL,
+  age integer NOT NULL,
+  gender text NOT NULL
+);
+
+CREATE TABLE public.movies (
+  id serial NOT NULL,
+  title text NOT NULL,
+  release_date date NOT NULL);
+
+insert into actors (name, age, gender)
+values ('actor1', 23, 'female');
+insert into actors (name, age, gender)
+values ('actor2', 43, 'female');
+insert into actors (name, age, gender)
+values ('actor3', 53, 'male');
+
+insert into movies (title, release_date)
+values ('mvoie1', '1999-5-23');
+insert into movies (title, release_date)
+values ('mvoie2', '1999-5-23');
+insert into movies (title, release_date)
+values ('mvoie3', '1999-5-23');
